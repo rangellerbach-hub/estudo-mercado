@@ -1,0 +1,410 @@
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.page {
+  font-family: 'Inter', sans-serif;
+  background: #F7F7F5;
+  color: #1F1F1F;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 0 3rem;
+}
+
+.hero {
+  background: #1F1F1F;
+  padding: 2.5rem 2rem 2rem;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6E6E6E;
+  margin-bottom: 1.25rem;
+}
+
+.headline {
+  font-size: clamp(26px, 5vw, 38px);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.headline em {
+  font-style: normal;
+  color: #A8C4A2;
+}
+
+.subline {
+  font-size: 14px;
+  font-weight: 300;
+  color: #6E6E6E;
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+.body {
+  padding: 2rem 2rem 0;
+}
+
+.anchor-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #FFFFFF;
+  border: 1px solid #E8E8E6;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.anchor-cell {
+  flex: 1;
+  padding: 1.1rem 1.25rem;
+  text-align: center;
+}
+
+.anchor-cell + .anchor-cell {
+  border-left: 1px solid #E8E8E6;
+}
+
+.anchor-cell.highlight {
+  background: #1F3D2B;
+}
+
+.anchor-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6E6E6E;
+  margin-bottom: 6px;
+}
+
+.anchor-cell.highlight .anchor-label {
+  color: #A8C4A2;
+}
+
+.price-old {
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: line-through;
+  color: #6E6E6E;
+}
+
+.price-new {
+  font-size: 28px;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+.savings-pill {
+  background: #0E5A5A;
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 0.9rem 1.25rem;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  flex-shrink: 0;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.savings-pill .big {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.section-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6E6E6E;
+  margin-bottom: 0.875rem;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.module-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0.875rem 1rem;
+  background: #FFFFFF;
+  border: 1px solid #E8E8E6;
+  border-radius: 6px;
+}
+
+.module-num {
+  font-size: 10px;
+  font-weight: 600;
+  color: #0E5A5A;
+  background: #EAF4F4;
+  border-radius: 3px;
+  padding: 2px 6px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  letter-spacing: 0.04em;
+}
+
+.module-text {
+  font-size: 13px;
+  font-weight: 400;
+  color: #1F1F1F;
+  line-height: 1.4;
+}
+
+.bonus-box {
+  background: #FFFFFF;
+  border: 1px solid #E8E8E6;
+  border-top: 2px solid #1F3A5F;
+  border-radius: 0 0 6px 6px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.bonus-title {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1F3A5F;
+  margin-bottom: 0.875rem;
+}
+
+.bonus-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bonus-items li {
+  font-size: 13px;
+  color: #1F1F1F;
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.bonus-items li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #1F3A5F;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #E8E8E6;
+  margin: 0 0 2rem;
+}
+
+.offer-card {
+  background: #1F1F1F;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.offer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #2E2E2E;
+}
+
+.offer-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.offer-desc {
+  font-size: 13px;
+  color: #6E6E6E;
+  line-height: 1.55;
+  max-width: 360px;
+  font-weight: 300;
+}
+
+.offer-price-block {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.price-was {
+  font-size: 12px;
+  color: #6E6E6E;
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+
+.price-final {
+  font-size: 36px;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.price-note {
+  font-size: 11px;
+  color: #6E6E6E;
+  margin-top: 3px;
+}
+
+.urgency-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.urgency-text {
+  font-size: 12px;
+  color: #6E6E6E;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.cta-btn {
+  background: #1F3D2B;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.trust-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  font-size: 12px;
+  color: #6E6E6E;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.trust-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #0E5A5A;
+  flex-shrink: 0;
+}
+</style>
+
+<div class="page">
+
+  <div class="hero">
+    <p class="eyebrow">Mini Apê · Estudo de Viabilidade</p>
+    <h1 class="headline">Como economizar<br><em>R$ 18.000</em> antes de<br>investir um centavo?</h1>
+    <p class="subline">Antes de abrir qualquer empreendimento, o mercado cobra caro por uma resposta que você pode aprender a encontrar sozinho — com método, planilha e quem já executou.</p>
+  </div>
+
+  <div class="body">
+
+    <div class="anchor-row">
+      <div class="anchor-cell">
+        <p class="anchor-label">Pesquisa de mercado profissional</p>
+        <p class="price-old">R$ 20.000</p>
+      </div>
+      <div class="anchor-cell highlight">
+        <p class="anchor-label">Seu investimento hoje</p>
+        <p class="price-new">R$ 1.500</p>
+      </div>
+      <div class="savings-pill">
+        <span>Você fica com</span>
+        <span class="big">R$ 18.500</span>
+        <span>no bolso</span>
+      </div>
+    </div>
+
+    <p class="section-label">O que você vai dominar</p>
+
+    <div class="modules-grid">
+      <div class="module-item"><span class="module-num">01</span><span class="module-text">Análise de concorrentes locais</span></div>
+      <div class="module-item"><span class="module-num">02</span><span class="module-text">Leitura de demanda real do mercado</span></div>
+      <div class="module-item"><span class="module-num">03</span><span class="module-text">Taxa de ocupação esperada</span></div>
+      <div class="module-item"><span class="module-num">04</span><span class="module-text">Fluxo de pessoas e sazonalidade</span></div>
+      <div class="module-item"><span class="module-num">05</span><span class="module-text">Infraestrutura e localização</span></div>
+      <div class="module-item"><span class="module-num">06</span><span class="module-text">Catalisadores de demanda</span></div>
+      <div class="module-item"><span class="module-num">07</span><span class="module-text">Viabilidade financeira completa</span></div>
+    </div>
+
+    <div class="bonus-box">
+      <p class="bonus-title">Bônus incluído</p>
+      <ul class="bonus-items">
+        <li>Planilha de CAPEX e DRE modelada — resultado líquido, ROE e payback calculados automaticamente</li>
+        <li>Vídeo passo a passo ensinando a preencher com os números do seu negócio</li>
+        <li>Parâmetros de referência usados em projetos reais de short-term rental</li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <div class="offer-card">
+      <div class="offer-top">
+        <div>
+          <p class="offer-name">Estudo de Viabilidade Mini Apê</p>
+          <p class="offer-desc">Metodologia completa + planilha financeira + vídeo de preenchimento. Tudo o que você precisa para tomar a decisão certa antes de colocar dinheiro no projeto.</p>
+        </div>
+        <div class="offer-price-block">
+          <p class="price-was">de R$ 2.000</p>
+          <p class="price-final">R$ 1.500</p>
+          <p class="price-note">só para quem decide hoje</p>
+        </div>
+      </div>
+      <div class="urgency-row">
+        <p class="urgency-text">Desconto de R$ 500 válido até meia-noite de hoje.<br>Amanhã o acesso volta a R$ 2.000.</p>
+        <a href="https://mpago.li/2Lcjo28" class="cta-btn">Garantir agora →</a>
+      </div>
+    </div>
+
+    <div class="trust-row">
+      <div class="trust-item"><div class="trust-dot"></div>Conhecimento de quem já executou</div>
+      <div class="trust-item"><div class="trust-dot"></div>Acesso imediato após confirmação</div>
+      <div class="trust-item"><div class="trust-dot"></div>Serve para qualquer região do Brasil</div>
+    </div>
+
+  </div>
+</div>
